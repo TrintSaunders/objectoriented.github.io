@@ -18,13 +18,37 @@ public class Inventory {
         }
     }
 
-    public void displayInventory(String type) {
+    //Displays fruit or weapons by type
+    public void displayInventoryByType(String type) {
+
+        for (ItemInfo item : items){
+
+            if(item instanceof Weapon) {
+                Weapon weapon = (Weapon) item;
+                
+                if (weapon.getType().equalsIgnoreCase(type)){
+                        weapon.displayInfo();
+                }
+    
+                if (item instanceof Fruit){
+                    Fruit fruit = (Fruit) item;
+                    
+                    if (fruit.getType().equalsIgnoreCase(type)) {
+                        fruit.displayInfo();
+                    }
+                }
+            }
+        }
+    }
+
+    //Display items by its name
+    public void displayInventoryByName(String name) {
+
         for(ItemInfo item : items) {
-            if (item instanceof Fruit && ((Fruit) item).getType().equalsIgnoreCase(type)){
-                item.displayInfo();
-            } else if (item instanceof Weapon && ((Weapon) item).getType().equalsIgnoreCase(type)) {
+            if(item.getName().equalsIgnoreCase(name)) {
                 item.displayInfo();
             }
         }
     }
+
 }
