@@ -29,13 +29,21 @@ public class Inventory {
                 if (weapon.getType().equalsIgnoreCase(type)){
                         weapon.displayInfo();
                 }
+            }
     
-                if (item instanceof Fruit){
-                    Fruit fruit = (Fruit) item;
+            if (item instanceof Fruit){
+                Fruit fruit = (Fruit) item;
                     
-                    if (fruit.getType().equalsIgnoreCase(type)) {
-                        fruit.displayInfo();
-                    }
+                if (fruit.getType().equalsIgnoreCase(type)) {
+                    fruit.displayInfo();
+                }
+            }
+
+            if (item instanceof Potion){
+                Potion potion = (Potion) item;
+                    
+                if (potion.getType().equalsIgnoreCase(type)) {
+                    potion.displayInfo();
                 }
             }
         }

@@ -11,6 +11,7 @@ public class Main {
         Weapon sword = new Weapon("Sword", 2, 75, "Melee");
         Weapon spear = new Weapon("Spear", 1, 50, "Melee");
         Weapon axe = new Weapon("Axe", 1, 90, "Melee");
+        Potion restoration = new Potion("Restoration", 2, 50, "Healing");
         
         //Places the item created above into the users inventory
         inventory.addItem(apple);
@@ -18,6 +19,7 @@ public class Main {
         inventory.addItem(spear);
         inventory.addItem(orange);
         inventory.addItem(axe);
+        inventory.addItem(restoration);
 
         //Scanner process
         Scanner scanner = new Scanner(System.in);
