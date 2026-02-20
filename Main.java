@@ -10,7 +10,7 @@ public class Main {
         Fruit orange = new Fruit("Orange", 5, "Climitine");
         Weapon sword = new Weapon("Sword", 2, 75, "Melee");
         Weapon spear = new Weapon("Spear", 1, 50, "Melee");
-        Weapon axe = new Weapon("Axe", 1, 90, "melee");
+        Weapon axe = new Weapon("Axe", 1, 90, "Melee");
         
         //Places the item created above into the users inventory
         inventory.addItem(apple);
