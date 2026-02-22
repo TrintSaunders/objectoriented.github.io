@@ -12,6 +12,8 @@ public class Main {
         Weapon spear = new Weapon("Spear", 1, 50, "Melee");
         Weapon axe = new Weapon("Axe", 1, 90, "Melee");
         Potion restoration = new Potion("Restoration", 2, 50, "Healing");
+        Potion regeneration = new Potion("Regeneration", 1, 75, "Healing");
+
         
         //Places the item created above into the users inventory
         inventory.addItem(apple);
@@ -20,6 +22,7 @@ public class Main {
         inventory.addItem(orange);
         inventory.addItem(axe);
         inventory.addItem(restoration);
+        inventory.addItem(regeneration);
 
         //Scanner process
         Scanner scanner = new Scanner(System.in);
@@ -28,6 +31,9 @@ public class Main {
         System.out.println("1 - All Items");
         System.out.println("2 - Filter by Type");
         System.out.println("3 - Filter by Name");
+        System.out.println("4 - Highest Damage Weapon");
+        System.out.println("5 - Highest Healing Potion");
+
 
         int choice = scanner.nextInt();
         scanner.nextLine(); //consumes newline
@@ -46,9 +52,15 @@ public class Main {
                 String name = scanner.nextLine();
                 inventory.displayInventoryByName(name);
                 break;
-            
+            case 4:
+                inventory.displayHighestDamageWeapon();
+                break;
+            case 5:
+                inventory.displayHighestHealingPotion();;
+                break;
+
             default:
-                System.out.println("Invalid choice.");
+                System.out.println("Invalid choice."); 
         }
 
         scanner.close();

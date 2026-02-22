@@ -59,4 +59,54 @@ public class Inventory {
         }
     }
 
+    //Loops through weapons and find the damage with the highest damage value
+    public void displayHighestDamageWeapon() {
+
+        Weapon highest = null;
+
+        for(ItemInfo item : items) {
+
+            if(item instanceof Weapon) {
+                Weapon weapon = (Weapon) item;
+            
+                if(highest == null || weapon.getDamage() > highest.getDamage()) {
+                    highest = weapon;
+                }
+            }
+        }
+
+        if(highest != null) {
+            System.out.println("Weapon with highest damage:");
+            highest.displayInfo();
+        }
+            else{
+                System.out.println("No weapons found in inventory.");
+            }
+    }
+
+    //Loops through potions and finds the highest healing potion
+    public void displayHighestHealingPotion() {
+
+        Potion highestHealing = null;
+
+        for(ItemInfo item : items) {
+            
+            if(item instanceof Potion) {
+                Potion potion = (Potion) item;
+
+                if(highestHealing == null || potion.getHealing() > highestHealing.getHealing()) {
+                    highestHealing = potion;
+                }
+            }
+        }
+
+        if(highestHealing != null){
+            System.out.println("Potion with highest healing:");
+            highestHealing.displayInfo();
+        }
+        else{
+            System.out.println("No potions found in inventory.");
+        }
+    }
+
 }
